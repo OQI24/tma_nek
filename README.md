@@ -1,23 +1,6 @@
-# Telegram Mini Apps React Template
-
-This template demonstrates how developers can implement a single-page
-application on the Telegram Mini Apps platform using the following technologies
-and libraries:
-
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TON Connect](https://docs.ton.org/develop/dapps/ton-connect/overview)
-- [@telegram-apps SDK](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/2-x)
-- [Telegram UI](https://github.com/Telegram-Mini-Apps/TelegramUI)
-- [Vite](https://vitejs.dev/)
-
-> The template was created using [npm](https://www.npmjs.com/). Therefore, it is
-> required to use it for this project as well. Using other package managers, you
-> will receive a corresponding error.
-
 ## Install Dependencies
 
-If you have just cloned this template, you should install the project
+If you have just cloned this project, you should install the project
 dependencies using the command:
 
 ```Bash
@@ -42,50 +25,7 @@ npm run {script}
 # Example: npm run build
 ```
 
-## Create Bot and Mini App
-
-Before you start, make sure you have already created a Telegram Bot. Here is
-a [comprehensive guide](https://docs.telegram-mini-apps.com/platform/creating-new-app)
-on how to do it.
-
 ## Run
-
-Although Mini Apps are designed to be opened
-within [Telegram applications](https://docs.telegram-mini-apps.com/platform/about#supported-applications),
-you can still develop and test them outside of Telegram during the development
-process.
-
-To run the application in the development mode, use the `dev` script:
-
-```bash
-npm run dev:https
-```
-
-> [!NOTE]
-> As long as we use [vite-plugin-mkcert](https://www.npmjs.com/package/vite-plugin-mkcert),
-> launching the dev mode for the first time, you may see sudo password request.
-> The plugin requires it to properly configure SSL-certificates. To disable the plugin, use the `npm run dev` command.
-
-After this, you will see a similar message in your terminal:
-
-```bash
-VITE v5.2.12  ready in 237 ms
-
-➜  Local:   https://localhost:5173/reactjs-template
-➜  Network: https://172.18.16.1:5173/reactjs-template
-➜  Network: https://172.19.32.1:5173/reactjs-template
-➜  Network: https://192.168.0.171:5173/reactjs-template
-➜  press h + enter to show help
-```
-
-Here, you can see the `Local` link, available locally, and `Network` links
-accessible to all devices in the same network with the current device.
-
-To view the application, you need to open the `Local`
-link (`https://localhost:5173/reactjs-template` in this example) in your
-browser:
-
-![Application](assets/application.png)
 
 It is important to note that some libraries in this template, such as
 `@telegram-apps/sdk`, are not intended for use outside of Telegram.
@@ -180,9 +120,9 @@ the GitHub repository settings and name it `github-pages`. Then, add the
 `master` branch to the list of deployment branches.
 
 You can find the environment settings using this
-URL: `https://github.com/{username}/{repository}/settings/environments`.
+URL: `https://github.com/{username}/{repository}/settings/environments`
 
-![img.png](.github/deployment-branches.png)
+[About deploy process](https://docs.github.com/ru/rest/deployments/branch-policies)
 
 In case, you don't want to do it automatically, or you don't use GitHub as the
 project codebase, remove the `.github` directory.
