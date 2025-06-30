@@ -16,7 +16,7 @@ import type { FC } from 'react';
 
 import { DisplayData } from '@/components/DisplayData/DisplayData.tsx';
 import { Page } from '@/components/Page.tsx';
-import { useWallet } from '@/components/WalletProvider/WalletProvider.tsx';
+import { useWallet } from '@/components/WalletProvider/types';
 import { bem } from '@/css/bem.ts';
 
 import './TONConnectPage.css';

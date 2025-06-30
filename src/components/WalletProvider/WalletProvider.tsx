@@ -1,14 +1,14 @@
-import { useTonWallet, useTonConnect } from '@tonconnect/ui-react';
+import { useTonWallet } from '@tonconnect/ui-react';
 import { useEffect, useState } from 'react';
 
-interface WalletProviderProps {
-  children: React.ReactNode;
-}
+import { WalletContext as WalletContextType, WalletProviderProps } from './types';
 
 export const WalletProvider: React.FC<WalletProviderProps> = ({ children }) => {
   const wallet = useTonWallet();
-  const { connected, account } = useTonConnect();
   const [isLoading, setIsLoading] = useState(false);
+
+  const connected = !!wallet;
+  const account = wallet?.account;
 
   useEffect(() => {
     if (connected && wallet) {
@@ -29,29 +29,8 @@ export const WalletProvider: React.FC<WalletProviderProps> = ({ children }) => {
   };
 
   return (
-    <WalletContext.Provider value={contextValue}>
+    <WalletContextType.Provider value={contextValue}>
       {children}
-    </WalletContext.Provider>
+    </WalletContextType.Provider>
   );
-};
-
-// Создаем контекст для доступа к данным кошелька
-import { createContext, useContext } from 'react';
-
-interface WalletContextType {
-  wallet: any;
-  connected: boolean;
-  account: any;
-  isLoading: boolean;
-  setIsLoading: (loading: boolean) => void;
-}
-
-const WalletContext = createContext<WalletContextType | undefined>(undefined);
-
-export const useWallet = () => {
-  const context = useContext(WalletContext);
-  if (context === undefined) {
-    throw new Error('useWallet должен использоваться внутри WalletProvider');
-  }
-  return context;
 }; 
