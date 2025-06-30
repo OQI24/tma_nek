@@ -2,7 +2,8 @@ import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 import { App } from '@/components/App.tsx';
 import { ErrorBoundary } from '@/components/ErrorBoundary.tsx';
-import { publicUrl } from '@/helpers/publicUrl.ts';
+import { WalletProvider } from '@/components/WalletProvider/WalletProvider.tsx';
+import { tonConnectConfig } from '@/config/tonConnect.ts';
 
 function ErrorBoundaryError({ error }: { error: unknown }) {
   return (
@@ -25,9 +26,11 @@ export function Root() {
   return (
     <ErrorBoundary fallback={ErrorBoundaryError}>
       <TonConnectUIProvider
-        manifestUrl={publicUrl('tonconnect-manifest.json')}
+        manifestUrl={tonConnectConfig.manifestUrl}
       >
-        <App/>
+        <WalletProvider>
+          <App/>
+        </WalletProvider>
       </TonConnectUIProvider>
     </ErrorBoundary>
   );
