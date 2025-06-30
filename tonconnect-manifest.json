@@ -1,5 +1,7 @@
 {
-  "url": "https://ton.vote",
-  "name": "TON Vote",
-  "iconUrl": "https://ton.vote/logo.png"
+  "url": "https://OQI24.github.io/tma_nek",
+  "name": "TMA NEK App",
+  "iconUrl": "https://OQI24.github.io/tma_nek/ton.svg",
+  "termsOfUseUrl": "https://OQI24.github.io/tma_nek/terms",
+  "privacyPolicyUrl": "https://OQI24.github.io/tma_nek/privacy"
 }
